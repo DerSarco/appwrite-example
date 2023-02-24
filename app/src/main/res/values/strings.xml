@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AppWrite Example</string>
+    <string name="generic_error">Something went null</string>
+</resources>

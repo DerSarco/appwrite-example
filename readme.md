@@ -98,15 +98,15 @@ And now we can start our Android Project, but first! we need to add our platform
 
 ![image](./readmeimg/6.png)
 
-What i recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data 
+What i recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data of this repository.
 
 ![image](./readmeimg/7.png)
 
-Click on **Next** and start the recommended config on our project
+Click on **Next** and start with the recommended config on our Android project
 
 ![image](./readmeimg/8.png)
 
-Add this dependencies in your project (mavenCentral in the most of the cases is declared so maybe is not necessary to redeclare. If you have doubts you can check it in settings.graddle)
+Add this dependencies in your Android project (mavenCentral in the most of the cases is declared so maybe is not necessary to redeclare. If you have doubts you can check it in settings.graddle)
 
 ![image](./readmeimg/9.png)
 
@@ -114,7 +114,7 @@ add the dependency in build.gradle and sync your project
 
 ![image](./readmeimg/10.png)
 
-AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this project we work in a different way this recommendation.
+AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this application we will work in a different way with this recommendation.
 
 ![image](./readmeimg/11.png)
 
@@ -122,9 +122,9 @@ Click on next and we are going to see this screen.
 
 ![image](./readmeimg/12.png)
 
-And that's it!, once we finish this configuration our AppWrite backend in ready to go with our app. BUT we need to make some little configurations in our app.
+And that's it!, once we finish this configuration our AppWrite backend is ready to go with our Android app. BUT first we need to make some little configurations in our Android app.
 
-As i mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml**
+As I mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml** inside of **application tag**
 
 ```
   <!--This is from documentation, on scheme add android:scheme add your project id from AppWrite-->
@@ -138,7 +138,7 @@ As i mention before we added the SDK dependency but we need to add this piece of
         </activity>
 ```
 
-We need to change a little this code, on **REPLACETHIS** we need to add our project id from AppWrite, and where is that thing? well is very easy to find, in our project dashboard we will see this little button where we can't saw directly the id but it automatically copy the id to our clipboard.
+We need to change a little this code, on **REPLACETHIS** we need to add our project id from AppWrite, and where is that thing? well is very easy to find, in our AppWrite project dashboard we will see this little button where we can't see directly the id but it automatically copy the id to our clipboard.
 
 ![image](./readmeimg/13.png)
 

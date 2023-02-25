@@ -78,7 +78,7 @@ Now we need to create an account to start developing in this platform, click on 
 
 ![image](./readmeimg/3.png)
 
-Fill everything, is not mandatory to create an account with real data, you coul'd user something like:
+Fill everything, is not mandatory to create an account with real data, you could user something like:
 
 - User: foo
 - Email: foo@bar.com

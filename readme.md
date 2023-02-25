@@ -122,7 +122,9 @@ Click on next and we are going to see this screen.
 
 ![image](./readmeimg/12.png)
 
-And that's it!, once we finish this configuration our AppWrite backend is ready to go with our Android app. BUT first we need to make some little configurations in our Android app.
+And that's it!, press on **Take me to my Dashboard**.
+
+Once we finish with this configuration our AppWrite backend is ready to go with our Android app. BUT first we need to make some little configurations in our Android app.
 
 As I mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml** inside of **application tag**
 

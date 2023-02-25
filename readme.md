@@ -114,7 +114,7 @@ add the dependency in build.gradle and sync your project
 
 ![image](./readmeimg/10.png)
 
-AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this application we will work in a different way with this recommendation.
+AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this repository we will work in a different way with this piece of code.
 
 ![image](./readmeimg/11.png)
 

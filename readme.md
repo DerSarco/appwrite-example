@@ -68,6 +68,8 @@ After the installation if everything is ok you can access to the website on your
 
 ```https://localhost:YOUR HTTPS PORT HERE]/login```
 
+> At my example i have an local ip address because i mounted this in an external pc.
+
 If everything goes well you will see this landpage:
 
 ![image](./readmeimg/2.png)

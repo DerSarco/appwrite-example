@@ -5,8 +5,8 @@ code snippets focused on the most used features of any project. For example:
 
  - Login
  - User Creation
- - Database Usage
- - Image Storage
+ - Database Usage [work in progress...]
+ - Image Storage [work in progress...]
  - And many others...
 
 # Programs

@@ -117,3 +117,35 @@ add the dependency in build.gradle and sync your project
 AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this project we work in a different way this recommendation.
 
 ![image](./readmeimg/11.png)
+
+Click on next and we are going to see this screen.
+
+![image](./readmeimg/12.png)
+
+And that's it!, once we finish this configuration our AppWrite backend in ready to go with our app. BUT we need to make some little configurations in our app.
+
+As i mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml**
+
+```
+  <!--This is from documentation, on scheme add android:scheme add your project id from AppWrite-->
+        <activity android:name="io.appwrite.views.CallbackActivity" android:exported="true">
+            <intent-filter android:label="android_web_auth">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="appwrite-callback-REPLACETHIS" />
+            </intent-filter>
+        </activity>
+```
+
+We need to change a little this code, on **REPLACETHIS** we need to add our project id from AppWrite, and where is that thing? well is very easy to find, in our project dashboard we will see this little button where we can't saw directly the id but it automatically copy the id to our clipboard.
+
+![image](./readmeimg/13.png)
+
+paste that id in **REPLACETHIS** and **manifest file** will be ready.
+
+forget to mention, but is important, **add internet permissions in manifest as well**
+
+>If you are forking this repository, just replace the project id and you will be ready to go 🙂
+
+and with this config you are ready to start using this repo to watch how everything works.

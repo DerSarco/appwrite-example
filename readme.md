@@ -27,7 +27,7 @@ why this? AppWrite recommends to use this because they provide a complete contai
 
 When Docker installation is ready, please use this command line:
 
-For Unix based systems:
+## For Unix based systems:
 ```
 docker run -it --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -66,7 +66,7 @@ make http request to not https endpoints.
 
 After the installation if everything is ok you can access to the website on your localhost service:
 
-**https://localhost:[YOUR HTTPS PORT HERE]/login)**
+```https://localhost:YOUR HTTPS PORT HERE]/login```
 
 If everything goes well you will see this landpage:
 

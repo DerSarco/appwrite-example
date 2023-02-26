@@ -58,7 +58,7 @@ docker run -it --rm `
 
 When docker installation finish, the command line will ask you for some basic configuration, in my personal case
 i used the standard but i changed the HTTPS port from 443 to 4433, this is important because as we know, Android doesn't
-make http request to not https endpoints.
+make HTTP request to not HTTPS endpoints.
 
 
 ![image](./readmeimg/1.png)
@@ -66,9 +66,9 @@ make http request to not https endpoints.
 
 After the installation if everything is ok you can access to the website on your localhost service:
 
-```https://localhost:YOUR HTTPS PORT HERE]/login```
+```https://localhost:YOUR HTTPS PORT HERE/login```
 
-> At my example i have an local ip address because i mounted this in an external pc.
+> In my example i used a local IP address because this was mounted in an external PC.
 
 If everything goes well you will see this landpage:
 
@@ -128,7 +128,7 @@ Once we finish with this configuration our AppWrite backend is ready to go with 
 
 As I mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml** inside of **application tag**
 
-```
+```XML
   <!--This is from documentation, on scheme add android:scheme add your project id from AppWrite-->
         <activity android:name="io.appwrite.views.CallbackActivity" android:exported="true">
             <intent-filter android:label="android_web_auth">
@@ -148,6 +148,24 @@ paste that id in **REPLACETHIS** and **manifest file** will be ready.
 
 forget to mention, but is important, **add internet permissions in manifest as well**
 
->If you are forking this repository, just replace the project id and you will be ready to go 🙂
+Other configuration that we need is in AppWriteInstance class, you could find this class into `app/src/main/java/com/dersarco/appwriteexample/appwrite`
 
-and with this config you are ready to start using this repo to watch how everything works.
+There is two variables you need to change and for your own values
+
+``` Kotlin
+open class AppWriteInstance(context: Context) {
+    private val client = Client(context)
+        .setEndpoint(ENDPOINT_URL)
+        .setProject(PROJECT_ID)
+        .setSelfSigned(true)
+
+    fun getClient(): Client = client
+}
+
+
+// Replace this with your own project id and API url
+private const val PROJECT_ID = "63f8c4cc0a8c1a64b76f"
+private const val ENDPOINT_URL = "https://192.168.3.2:4433/v1"
+```
+
+Now with this config you are ready to start using this repo and watch how everything works.

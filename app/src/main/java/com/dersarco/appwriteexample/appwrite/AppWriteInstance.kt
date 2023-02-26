@@ -3,13 +3,11 @@ package com.dersarco.appwriteexample.appwrite
 import android.content.Context
 import io.appwrite.Client
 
-open class AppWriteInstance(context: Context) {
-    private val client = Client(context)
+open class AppWriteInstance(private val context: Context) {
+    val appWriteClient = Client(context)
         .setEndpoint(ENDPOINT_URL)
         .setProject(PROJECT_ID)
         .setSelfSigned(true)
-
-    fun getClient(): Client = client
 }
 
 

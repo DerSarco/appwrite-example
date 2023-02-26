@@ -9,7 +9,7 @@ import io.appwrite.models.Account as AccountResponse
 
 class AppWriteAccount(private val context: Context) : AppWriteInstance(context) {
 
-    private val account = Account(client = getClient())
+    private val account = Account(client = appWriteClient)
 
     suspend fun registerUser(
         name: String,

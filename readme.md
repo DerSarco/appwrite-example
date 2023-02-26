@@ -98,7 +98,7 @@ And now we can start our Android Project, but first! we need to add our platform
 
 ![image](./readmeimg/6.png)
 
-What i recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data of this repository.
+What I recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data of this repository.
 
 ![image](./readmeimg/7.png)
 
@@ -144,17 +144,19 @@ As I mention before we added the SDK dependency but we need to add this piece of
         </activity>
 ```
 
-We need to change a little this code, on **REPLACETHIS** we need to add our project id from AppWrite, and where is that thing? well is very easy to find, in our AppWrite project dashboard we will see this little button where we can't see directly the id but it automatically copy the id to our clipboard.
+We need to change a little this code, on **REPLACETHIS** we need to add our project ID from AppWrite, and where is that thing? well is very easy to find, in our AppWrite project dashboard we will see this little button where we can't see directly the id but it automatically copy the id to our clipboard.
 
 ![image](./readmeimg/13.png)
 
-paste that id in **REPLACETHIS** and **manifest file** will be ready.
+paste the ID in **REPLACETHIS** and **manifest file** will be ready.
 
 forget to mention, but is important, **add internet permissions in manifest as well**
 
+> If you forked this repo is not necessary is already added the permission 🙂
+
 Other configuration that we need is in AppWriteInstance class, you could find this class into `app/src/main/java/com/dersarco/appwriteexample/appwrite`
 
-There is two variables you need to change and for your own values
+There is two variables you need to change for your own values
 
 ``` Kotlin
 open class AppWriteInstance(context: Context) {

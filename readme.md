@@ -133,7 +133,7 @@ Once we finish with this configuration our AppWrite backend is ready to go with 
 As I mention before we added the SDK dependency but we need to add this piece of XML code in our **manifest.xml** inside of **application tag**
 
 ```XML
-  <!--This is from documentation, on scheme add android:scheme add your project id from AppWrite-->
+  <!--This is from documentation, on android:scheme add your project id from AppWrite-->
         <activity android:name="io.appwrite.views.CallbackActivity" android:exported="true">
             <intent-filter android:label="android_web_auth">
                 <action android:name="android.intent.action.VIEW" />

@@ -112,7 +112,11 @@ Add this dependencies in your Android project (mavenCentral in the most of the c
 
 add the dependency in build.gradle and sync your project
 
-![image](./readmeimg/10.png)
+```Gradle
+    def appWrite_version = "1.2.0" // current version at this date
+    
+    implementation "io.appwrite:sdk-for-android:$appWrite_version"
+```
 
 AppWrite recommend us this piece of code to start building our application but we are going to skip this because in this repository we will work in a different way with this piece of code.
 

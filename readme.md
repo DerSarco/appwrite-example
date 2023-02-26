@@ -20,7 +20,7 @@ code snippets focused on the most used features of any project. For example:
  - [Jetpack Compose Navigation](https://developer.android.com/jetpack/compose/navigation)
 
 
-# First steps
+# How to use this repository
 
 To start using this example we are going to need some programs, first of all please install [Docker](https://www.docker.com/products/docker-desktop/)
 why this? AppWrite recommends to use this because they provide a complete container image ready for use.
@@ -98,7 +98,7 @@ And now we can start our Android Project, but first! we need to add our platform
 
 ![image](./readmeimg/6.png)
 
-What I recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data of this repository.
+What I recommend on this point? simple, create an Android project because AppWrite will ask some info about our project, in my example i will use the same data of this repository. 
 
 ![image](./readmeimg/7.png)
 

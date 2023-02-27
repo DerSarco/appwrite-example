@@ -176,7 +176,7 @@ into `app/src/main/java/com/dersarco/appwriteexample/appwrite`
 There is two variables you need to change for your own values
 
 ``` Kotlin
-open class AppWriteInstance(context: Context) {
+class AppWriteInstance(context: Context) {
     private val client = Client(context)
         .setEndpoint(ENDPOINT_URL)
         .setProject(PROJECT_ID)
@@ -184,7 +184,6 @@ open class AppWriteInstance(context: Context) {
 
     fun getClient(): Client = client
 }
-
 
 // Replace this with your own project id and API url
 private const val PROJECT_ID = "63f8c4cc0a8c1a64b76f"
@@ -246,7 +245,7 @@ Now we can move to the code, on AppWriteDatabase.kt we need to change this piece
 `app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteDatabase.kt`
 
 ```Kotlin 
-class AppWriteDatabase(private val context: Context) : AppWriteInstance(context) {
+class AppWriteDatabase(private val context: Context, appWriteInstance: AppWriteInstance) {
 
     //Replace with your own id's from AppWrite database
     private object AppWriteDatabaseConstants {

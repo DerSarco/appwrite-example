@@ -3,13 +3,12 @@ package com.dersarco.appwriteexample.appwrite
 import android.content.Context
 import io.appwrite.Client
 
-open class AppWriteInstance(context: Context) {
+class AppWriteInstance(context: Context) {
     val appWriteClient = Client(context)
         .setEndpoint(ENDPOINT_URL)
         .setProject(PROJECT_ID)
         .setSelfSigned(true)
 }
-
 
 // Replace this with your own project id and API url
 private const val PROJECT_ID = "63f8c4cc0a8c1a64b76f"

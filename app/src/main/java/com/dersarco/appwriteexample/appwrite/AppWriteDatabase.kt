@@ -46,7 +46,7 @@ class AppWriteDatabase(private val context: Context, appWriteInstance: AppWriteI
                 databaseId = AppWriteDatabaseConstants.DATABASE_ID,
                 collectionId = AppWriteDatabaseConstants.COLLECTION_ID
             )
-            if(response.documents.isEmpty()){
+            if (response.documents.isEmpty()) {
                 throw AppwriteException("No data found", 8888)
             }
             val dataParsed = Gson().fromJson(

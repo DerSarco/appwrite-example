@@ -255,8 +255,8 @@ class AppWriteDatabase(private val context: Context) : AppWriteInstance(context)
 }
 ```
 
-And now, where are this famous Id's, in you database and collection dashboard you could find this
-button, works the same way as the button on Project Dashboard
+And now, where are this famous Id's? in you database and collection dashboard you could find this
+button, works the same way as the button of Project Dashboard
 
 ![image](./readmeimg/db/db5.png) ![image](./readmeimg/db/db6.png)
 
@@ -264,7 +264,7 @@ Now we are ready to go with this example, you can play as you want with the code
 
 ![image](./readmeimg/db/db7.png)
 
-> Be careful, and don't try to add a document with empty fields, maybe the app will crash.
+> Be careful, and don't try to add a document with empty fields, maybe the app will crash, i'll take care of this later 😅.
 
 You also can watch your documents parsed in a Lazy Column in other view that i created for this
 purpose.

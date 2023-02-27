@@ -68,8 +68,8 @@ fun CreateDocumentView(onButtonBackPressed: () -> Unit) {
             Column {
                 Text(text = "Age")
                 TextField(
-                    value = age.toString(),
-                    onValueChange = { age = if (it == "") 0 else it.toInt() },
+                    value = if (age == 0) "" else age.toString(),
+                    onValueChange = { age = if (it.toIntOrNull() == null) 0 else it.toInt() },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
             }
@@ -86,13 +86,16 @@ fun CreateDocumentView(onButtonBackPressed: () -> Unit) {
 fun onCreateDocument(person: Person, coroutineScope: CoroutineScope, context: Context) {
     coroutineScope.launch(Dispatchers.IO) {
         val response = AppWriteDatabase(context).createDocument(person)
-        withContext(Dispatchers.Main){
+        withContext(Dispatchers.Main) {
             when (response) {
                 is AppWriteResponse.Success -> showToast(
                     "Document ID: ${response.data.id} was created",
                     context
                 )
-                is AppWriteResponse.Error -> showToast("${response.code}: ${response.message}", context)
+                is AppWriteResponse.Error -> showToast(
+                    "${response.code}: ${response.message}",
+                    context
+                )
             }
         }
     }

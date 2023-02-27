@@ -262,11 +262,12 @@ button, works the same way as the button of Project Dashboard
 
 Now we are ready to go with this example, you can play as you want with the code and try new things.
 
-![image](./readmeimg/db/db7.png)
+<img src="./readmeimg/db/db7.png" widht="25%" height="25%">
 
 > Be careful, and don't try to add a document with empty fields, maybe the app will crash, i'll take care of this later 😅.
 
 You also can watch your documents parsed in a Lazy Column in other view that i created for this
 purpose.
 
-![image](./readmeimg/db/db8.png)
+<img src="./readmeimg/db/db8.png" widht="25%" height="25%">
+

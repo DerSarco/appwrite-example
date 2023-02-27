@@ -21,10 +21,11 @@ import com.dersarco.appwriteexample.ui.common.showToast
 import io.appwrite.models.Account
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.get
 
 
 @Composable
-fun LoginUserView(onButtonBackPressed: () -> Unit) {
+fun LoginUserView(appWriteAccount: AppWriteAccount = get(), onButtonBackPressed: () -> Unit) {
 
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -72,7 +73,7 @@ fun LoginUserView(onButtonBackPressed: () -> Unit) {
                 TextField(value = password, onValueChange = { password = it })
             }
             Button(onClick = {
-                onLogin(email, password, coroutineScope, context) {
+                onLogin(email, password, coroutineScope, appWriteAccount, context) {
                     userData = it
                 }
             }) {
@@ -98,11 +99,12 @@ fun onLogin(
     email: String,
     password: String,
     coroutineScope: CoroutineScope,
+    appWriteAccount: AppWriteAccount,
     context: Context,
     onUserDataRetrieved: (Account<Any>?) -> Unit
 ) {
     coroutineScope.launch {
-        when (val response = AppWriteAccount(context).loginUser(email, password)) {
+        when (val response = appWriteAccount.loginUser(email, password)) {
             is AppWriteResponse.Success -> {
                 onUserDataRetrieved(response.data)
             }

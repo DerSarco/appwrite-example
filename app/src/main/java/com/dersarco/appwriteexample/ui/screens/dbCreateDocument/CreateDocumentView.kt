@@ -25,9 +25,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.koin.androidx.compose.get
 
 @Composable
-fun CreateDocumentView(onButtonBackPressed: () -> Unit) {
+fun CreateDocumentView(
+    appWriteDatabase: AppWriteDatabase = get(),
+    onButtonBackPressed: () -> Unit
+) {
 
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -75,7 +79,7 @@ fun CreateDocumentView(onButtonBackPressed: () -> Unit) {
             }
             Button(onClick = {
                 val person = Person(name, age)
-                onCreateDocument(person, coroutineScope, context)
+                onCreateDocument(person, coroutineScope, appWriteDatabase, context)
             }) {
                 Text(text = "Create Document")
             }
@@ -83,9 +87,14 @@ fun CreateDocumentView(onButtonBackPressed: () -> Unit) {
     }
 }
 
-fun onCreateDocument(person: Person, coroutineScope: CoroutineScope, context: Context) {
+fun onCreateDocument(
+    person: Person,
+    coroutineScope: CoroutineScope,
+    appWriteDatabase: AppWriteDatabase,
+    context: Context
+) {
     coroutineScope.launch(Dispatchers.IO) {
-        val response = AppWriteDatabase(context).createDocument(person)
+        val response = appWriteDatabase.createDocument(person)
         withContext(Dispatchers.Main) {
             when (response) {
                 is AppWriteResponse.Success -> showToast(

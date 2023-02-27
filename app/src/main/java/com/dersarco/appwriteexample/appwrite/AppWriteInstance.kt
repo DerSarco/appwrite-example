@@ -3,7 +3,7 @@ package com.dersarco.appwriteexample.appwrite
 import android.content.Context
 import io.appwrite.Client
 
-open class AppWriteInstance(private val context: Context) {
+open class AppWriteInstance(context: Context) {
     val appWriteClient = Client(context)
         .setEndpoint(ENDPOINT_URL)
         .setProject(PROJECT_ID)

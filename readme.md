@@ -6,7 +6,7 @@ code snippets focused on the most used features of any project. For example:
 - Login
 - User Creation
 - Database Usage
-- Image Storage [work in progress...]
+- Storage [work in progress...]
 - And many others...
 
 # Programs
@@ -18,6 +18,7 @@ code snippets focused on the most used features of any project. For example:
 
 - AppWrite SDK (in the example below we will explain this)
 - [Jetpack Compose Navigation](https://developer.android.com/jetpack/compose/navigation)
+- [Koin](https://insert-koin.io/docs/setup/koin)
 
 # How to use this repository
 
@@ -244,7 +245,7 @@ Now we can move to the code, on AppWriteDatabase.kt we need to change this piece
 
 `app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteDatabase.kt`
 
-```Kotlin
+```Kotlin 
 class AppWriteDatabase(private val context: Context) : AppWriteInstance(context) {
 
     //Replace with your own id's from AppWrite database

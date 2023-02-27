@@ -2,7 +2,10 @@ package com.dersarco.appwriteexample.ui.screens.createuser
 
 import android.content.Context
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -17,9 +20,10 @@ import com.dersarco.appwriteexample.appwrite.AppWriteResponse
 import com.dersarco.appwriteexample.ui.common.showToast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.get
 
 @Composable
-fun CreateUserView(onButtonBackPressed: () -> Unit) {
+fun CreateUserView(appWriteAccount: AppWriteAccount = get(), onButtonBackPressed: () -> Unit) {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
 
@@ -67,7 +71,16 @@ fun CreateUserView(onButtonBackPressed: () -> Unit) {
                 Text(text = "Username (Optional)")
                 TextField(value = userName, onValueChange = { userName = it })
             }
-            Button(onClick = { createUser(userName, password, email, coroutineScope, context) }) {
+            Button(onClick = {
+                createUser(
+                    userName,
+                    password,
+                    email,
+                    coroutineScope,
+                    appWriteAccount,
+                    context
+                )
+            }) {
                 Text(text = "Create User")
             }
         }
@@ -79,10 +92,11 @@ fun createUser(
     password: String,
     email: String,
     coroutineScope: CoroutineScope,
+    appWriteAccount: AppWriteAccount,
     context: Context
 ) {
     coroutineScope.launch {
-        when (val response = AppWriteAccount(context).registerUser(username, password, email)) {
+        when (val response = appWriteAccount.registerUser(username, password, email)) {
             is AppWriteResponse.Success -> showToast(
                 "${response.data.name} has been created!",
                 context

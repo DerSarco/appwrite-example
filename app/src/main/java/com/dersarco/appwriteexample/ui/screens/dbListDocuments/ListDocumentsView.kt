@@ -15,19 +15,21 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.dersarco.appwriteexample.appwrite.AppWriteDatabase
 import com.dersarco.appwriteexample.appwrite.AppWriteResponse
+import com.dersarco.appwriteexample.data.entities.DocumentList
 import com.dersarco.appwriteexample.ui.common.showToast
+import org.koin.androidx.compose.get
 
 @Composable
-fun ListDocumentsView(onButtonBackPressed: () -> Unit) {
+fun ListDocumentsView(appWriteDatabase: AppWriteDatabase = get(), onButtonBackPressed: () -> Unit) {
 
     val context = LocalContext.current
 
     var documentList by remember {
-        mutableStateOf<com.dersarco.appwriteexample.data.entities.DocumentList?>(null)
+        mutableStateOf<DocumentList?>(null)
     }
 
     LaunchedEffect(key1 = Unit) {
-        when (val response = AppWriteDatabase(context).listDocuments()) {
+        when (val response = appWriteDatabase.listDocuments()) {
             is AppWriteResponse.Success -> documentList = response.data
             is AppWriteResponse.Error -> {
                 documentList = null

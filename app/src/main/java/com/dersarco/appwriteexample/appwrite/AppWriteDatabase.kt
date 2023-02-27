@@ -9,7 +9,7 @@ import io.appwrite.exceptions.AppwriteException
 import io.appwrite.models.Document
 import io.appwrite.services.Databases
 
-class AppWriteDatabase(private val context: Context) : AppWriteInstance(context) {
+class AppWriteDatabase(private val context: Context, appWriteInstance: AppWriteInstance) {
 
     //Replace with your own id's from AppWrite database
     private object AppWriteDatabaseConstants {
@@ -17,7 +17,7 @@ class AppWriteDatabase(private val context: Context) : AppWriteInstance(context)
         const val COLLECTION_ID = "63fba37f873c649fbdf8"
     }
 
-    private val database = Databases(appWriteClient)
+    private val database = Databases(appWriteInstance.appWriteClient)
 
     //TODO: Search how to create databases programatically
 

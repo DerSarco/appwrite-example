@@ -8,10 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dersarco.appwriteexample.R
-import com.dersarco.appwriteexample.ui.navigation.createUserView
-import com.dersarco.appwriteexample.ui.navigation.dbCreateDocument
-import com.dersarco.appwriteexample.ui.navigation.dbListDocuments
-import com.dersarco.appwriteexample.ui.navigation.loginUserView
+import com.dersarco.appwriteexample.ui.navigation.*
 
 @Composable
 fun WelcomeView(onGoToView: (String) -> Unit) {
@@ -42,6 +39,12 @@ fun WelcomeView(onGoToView: (String) -> Unit) {
             }
             Button(onClick = { onGoToView("/$dbListDocuments") }) {
                 Text(text = "Go to $dbListDocuments")
+            }
+
+            Divider(modifier = Modifier.fillMaxWidth(). padding(6.dp))
+            Text(text = "Storage", modifier = Modifier.padding(top = 6.dp))
+            Button(onClick = { onGoToView("/$storageUpload") }) {
+                Text(text = "Go to $storageUpload")
             }
         }
     }

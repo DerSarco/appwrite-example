@@ -9,6 +9,7 @@ import com.dersarco.appwriteexample.ui.screens.createuser.CreateUserView
 import com.dersarco.appwriteexample.ui.screens.dbCreateDocument.CreateDocumentView
 import com.dersarco.appwriteexample.ui.screens.dbListDocuments.ListDocumentsView
 import com.dersarco.appwriteexample.ui.screens.loginUser.LoginUserView
+import com.dersarco.appwriteexample.ui.screens.storageUpload.StorageUploadView
 import com.dersarco.appwriteexample.ui.screens.welcome.WelcomeView
 
 @Composable
@@ -44,6 +45,11 @@ fun Navigation() {
                     navController.popBackStack()
                 }
             }
+            composable("/$storageUpload") {
+                StorageUploadView {
+                    navController.popBackStack()
+                }
+            }
         }
     }
 }
@@ -53,3 +59,4 @@ const val createUserView = "createUser"
 const val loginUserView = "loginUser"
 const val dbCreateDocument = "dbCreateDocument"
 const val dbListDocuments = "dbListDocuments"
+const val storageUpload = "storageUpload"

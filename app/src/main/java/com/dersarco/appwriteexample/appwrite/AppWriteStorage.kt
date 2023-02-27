@@ -25,14 +25,7 @@ class AppWriteStorage(private val context: Context, appWriteInstance: AppWriteIn
     suspend fun uploadToStorage(uri: Uri?): AppWriteResponse<File> {
         return try {
             if (uri != null) {
-                val descriptor = context.contentResolver.openFileDescriptor(uri, "r", null)
-                val file = java.io.File(context.cacheDir, context.contentResolver.getFileName(uri))
-                val inputStream = FileInputStream(descriptor!!.fileDescriptor)
-                val outputStream =
-                    withContext(Dispatchers.IO) {
-                        FileOutputStream(file)
-                    }
-                inputStream.copyTo(outputStream)
+                val file = getInputStream(uri)
                 val response = storage.createFile(
                     bucketId = BUCKET_ID,
                     fileId = ID.unique(),
@@ -62,13 +55,24 @@ class AppWriteStorage(private val context: Context, appWriteInstance: AppWriteIn
         }
     }
 
-
     private suspend fun getPreview(list: List<File>) = list.map {
         val preview = storage.getFilePreview(bucketId = BUCKET_ID, it.id)
         val bitmap = BitmapFactory.decodeByteArray(preview, 0, preview.size)
         bitmap
     }
 
+    @SuppressLint("Recycle")
+    private suspend fun getInputStream(uri: Uri?): java.io.File {
+        val descriptor = context.contentResolver.openFileDescriptor(uri!!, "r", null)
+        val file = java.io.File(context.cacheDir, context.contentResolver.getFileName(uri))
+        val inputStream = FileInputStream(descriptor!!.fileDescriptor)
+        val outputStream =
+            withContext(Dispatchers.IO) {
+                FileOutputStream(file)
+            }
+        inputStream.copyTo(outputStream)
+        return file
+    }
 
     private fun ContentResolver.getFileName(fileUri: Uri): String {
         var name = ""

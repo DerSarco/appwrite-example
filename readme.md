@@ -1,3 +1,13 @@
+Want to help me continue with this?
+
+ <a href="https://www.buymeacoffee.com/dersarcow" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+# Connect with me 😊
+
+<div style="  display: flex; justify-content: space-around;"><a href="https://www.linkedin.com/in/cmunozbustamante/"><img src="https://raw.githubusercontent.com/yushi1007/yushi1007/05fea7c9a730f73ed6c6ad9eae0722a6fa9c69fd/images/linkedin.svg" alt="icon | LinkedIn" width="48px"></a><a href="https://gabimoreno.soy/comunidad"><img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="icon | Discord" width="48px"></a><a href="https://twitter.com/DerSarco"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="icon | Twitter" width="48px"></a></div>
+
+
+
 # AppWrite App example
 
 Welcome to this little [AppWrite](https://appwrite.io/) Example, i'm going to try to give you a few

@@ -196,7 +196,7 @@ Now with this config you are ready to start using this repo and watch how everyt
 
 ## Login/Create Accounts
 
-For login and create users we don't need any specific configuration, but if you want to learn more
+For login and create users we don't need any specific configuration but if you want to learn more
 about this functionality you can check
 it [here](https://appwrite.io/docs/client/account?sdk=android-kotlin)
 
@@ -222,7 +222,7 @@ example we are going to create two attributes because is a example, but if you w
 about collections and attributes you can check
 this [link](https://appwrite.io/docs/client/databases?sdk=android-kotlin).
 
-To create this attributes just press on **Creata attribute** fill the fields with the info of that
+To create this attributes just press on **Create attribute** fill the fields with the info of that
 attribute and create it.
 
 Example fields:
@@ -233,7 +233,7 @@ Example fields:
 ![image](./readmeimg/db/db3.png)
 
 Now we need to configure the permissions of this collection, by default everything comes unabled, so
-for this case we are going to configure this collection like this:
+for this case we are going to configure on settings tab this collection like this:
 
 ![image](./readmeimg/db/db4.png)
 
@@ -241,6 +241,8 @@ Just Users for this example, and remember to make a login on the Login Example S
 need an instace of login to create documents.
 
 Now we can move to the code, on AppWriteDatabase.kt we need to change this piece of code:
+
+`app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteDatabase.kt`
 
 ```Kotlin
 class AppWriteDatabase(private val context: Context) : AppWriteInstance(context) {
@@ -262,12 +264,12 @@ button, works the same way as the button of Project Dashboard
 
 Now we are ready to go with this example, you can play as you want with the code and try new things.
 
-<img src="./readmeimg/db/db7.png" width="25%" height="25%"/>
+<img src="./readmeimg/db/db7.png" width="40%" height="40%"/>
 
 > Be careful, and don't try to add a document with empty fields, maybe the app will crash, i'll take care of this later 😅.
 
 You also can watch your documents parsed in a Lazy Column in other view that i created for this
 purpose.
 
-<img src="./readmeimg/db/db8.png" width="25%" height="25%"/>
+<img src="./readmeimg/db/db8.png" width="40%" height="40%"/>
 

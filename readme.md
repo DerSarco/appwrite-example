@@ -4,7 +4,11 @@ Want to help me continue with this?
 
 # Connect with me 😊
 
-<div style="display: flex; justify-content: space-around;"><a href="https://www.linkedin.com/in/cmunozbustamante/"><img src="https://raw.githubusercontent.com/yushi1007/yushi1007/05fea7c9a730f73ed6c6ad9eae0722a6fa9c69fd/images/linkedin.svg" alt="icon | LinkedIn" width="48px"></a><a href="https://gabimoreno.soy/comunidad"><img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="icon | Discord" width="48px"></a><a href="https://twitter.com/DerSarco"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="icon | Twitter" width="48px"></a></div>
+
+<a href="https://www.linkedin.com/in/cmunozbustamante/"><img   src="https://raw.githubusercontent.com/yushi1007/yushi1007/05fea7c9a730f73ed6c6ad9eae0722a6fa9c69fd/images/linkedin.svg" alt="icon | LinkedIn" width="48px"></a> 
+<a href="https://gabimoreno.soy/comunidad"><img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="icon | Discord" width="48px"></a>
+<a href="https://twitter.com/DerSarco"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="icon | Twitter" width="48px"></a>
+
 
 
 

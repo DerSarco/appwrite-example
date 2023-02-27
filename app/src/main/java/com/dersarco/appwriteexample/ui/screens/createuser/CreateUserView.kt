@@ -56,16 +56,16 @@ fun CreateUserView(onButtonBackPressed: () -> Unit) {
             verticalArrangement = Arrangement.Top
         ) {
             Column {
-                Text(text = "Username")
-                TextField(value = userName, onValueChange = { userName = it })
-            }
-            Column {
                 Text(text = "Email")
                 TextField(value = email, onValueChange = { email = it })
             }
             Column {
                 Text(text = "Password")
                 TextField(value = password, onValueChange = { password = it })
+            }
+            Column {
+                Text(text = "Username (Optional)")
+                TextField(value = userName, onValueChange = { userName = it })
             }
             Button(onClick = { createUser(userName, password, email, coroutineScope, context) }) {
                 Text(text = "Create User")

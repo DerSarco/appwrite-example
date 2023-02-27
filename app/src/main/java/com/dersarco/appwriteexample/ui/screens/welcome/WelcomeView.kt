@@ -1,17 +1,12 @@
 package com.dersarco.appwriteexample.ui.screens.welcome
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.dersarco.appwriteexample.R
 import com.dersarco.appwriteexample.ui.navigation.createUserView
 import com.dersarco.appwriteexample.ui.navigation.dbCreateDocument
@@ -30,15 +25,18 @@ fun WelcomeView(onGoToView: (String) -> Unit) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Text(text = "Accounts", modifier = Modifier.padding(top = 6.dp))
             Button(onClick = { onGoToView("/$createUserView") }) {
                 Text(text = "Go to $createUserView")
             }
             Button(onClick = { onGoToView("/$loginUserView") }) {
                 Text(text = "Go to $loginUserView")
             }
+            Divider(modifier = Modifier.fillMaxWidth(). padding(6.dp))
+            Text(text = "Database", modifier = Modifier.padding(top = 6.dp))
             Button(onClick = { onGoToView("/$dbCreateDocument") }) {
                 Text(text = "Go to $dbCreateDocument")
             }

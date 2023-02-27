@@ -1,14 +1,12 @@
 package com.dersarco.appwriteexample.appwrite
 
 import android.content.Context
-import android.util.Log
 import com.dersarco.appwriteexample.R
 import com.dersarco.appwriteexample.data.entities.Person
 import com.google.gson.Gson
 import io.appwrite.ID
 import io.appwrite.exceptions.AppwriteException
 import io.appwrite.models.Document
-import io.appwrite.models.DocumentList
 import io.appwrite.services.Databases
 
 class AppWriteDatabase(private val context: Context) : AppWriteInstance(context) {
@@ -55,7 +53,6 @@ class AppWriteDatabase(private val context: Context) : AppWriteInstance(context)
                 Gson().toJson(response),
                 com.dersarco.appwriteexample.data.entities.DocumentList::class.java
             )
-            Log.d("DATA", dataParsed.toString())
             AppWriteResponse.Success(dataParsed)
         } catch (e: AppwriteException) {
             e.printStackTrace()

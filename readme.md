@@ -258,4 +258,3 @@ class AppWriteDatabase(private val context: Context) : AppWriteInstance(context)
 
 And now, where are this famous Id's, in you database and collection dashboard you could find this
 button, works the same way as the button on Project Dashboard
-Sun Feb 26 22:54:44 -03 2023

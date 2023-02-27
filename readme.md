@@ -287,3 +287,6 @@ purpose.
 
 <img src="./readmeimg/db/db8.png" width="40%" height="40%"/>
 
+## Storage
+
+Work in progress...

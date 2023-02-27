@@ -45,7 +45,7 @@ fun LoginUserView(appWriteAccount: AppWriteAccount = get(), onButtonBackPressed:
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Create User") },
+                title = { Text(text = "Login User") },
                 navigationIcon = {
                     Icon(
                         modifier = Modifier.clickable { onButtonBackPressed() },

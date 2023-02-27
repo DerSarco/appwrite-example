@@ -46,6 +46,9 @@ fun WelcomeView(onGoToView: (String) -> Unit) {
             Button(onClick = { onGoToView("/$storageUpload") }) {
                 Text(text = "Go to $storageUpload")
             }
+            Button(onClick = { onGoToView("/$storageList") }) {
+                Text(text = "Go to $storageList")
+            }
         }
     }
 }

@@ -3,6 +3,8 @@ package com.dersarco.appwriteexample.appwrite
 import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.OpenableColumns
 import io.appwrite.ID
@@ -48,6 +50,25 @@ class AppWriteStorage(private val context: Context, appWriteInstance: AppWriteIn
             AppWriteResponse.Error(0, e.message ?: "")
         }
     }
+
+    suspend fun getStorageList(): AppWriteResponse<List<Bitmap>> {
+        return try {
+            val response = storage.listFiles("63fccb7b6230779b11b4")
+            val previewList = getPreview(response.files)
+            AppWriteResponse.Success(previewList)
+        } catch (e: AppwriteException) {
+            e.printStackTrace()
+            AppWriteResponse.Error(e.code ?: 0, e.message ?: "")
+        }
+    }
+
+
+    private suspend fun getPreview(list: List<File>) = list.map {
+        val preview = storage.getFilePreview(bucketId = BUCKET_ID, it.id)
+        val bitmap = BitmapFactory.decodeByteArray(preview, 0, preview.size)
+        bitmap
+    }
+
 
     private fun ContentResolver.getFileName(fileUri: Uri): String {
         var name = ""

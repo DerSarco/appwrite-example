@@ -87,4 +87,5 @@ class AppWriteStorage(private val context: Context, appWriteInstance: AppWriteIn
     }
 }
 
+// Change this ID for your own ID
 private const val BUCKET_ID = "63fccb7b6230779b11b4"

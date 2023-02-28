@@ -4,13 +4,9 @@ Want to help me continue with this?
 
 # Connect with me 😊
 
-
 <a href="https://www.linkedin.com/in/cmunozbustamante/"><img   src="https://raw.githubusercontent.com/yushi1007/yushi1007/05fea7c9a730f73ed6c6ad9eae0722a6fa9c69fd/images/linkedin.svg" alt="icon | LinkedIn" width="48px"></a> 
 <a href="https://gabimoreno.soy/comunidad"><img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="icon | Discord" width="48px"></a>
 <a href="https://twitter.com/DerSarco"><img src="https://www.svgrepo.com/show/475689/twitter-color.svg" alt="icon | Twitter" width="48px"></a>
-
-
-
 
 # AppWrite App example
 
@@ -20,8 +16,14 @@ code snippets focused on the most used features of any project. For example:
 - Login
 - User Creation
 - Database Usage
-- Storage [work in progress...]
-- And many others...
+- Storage 
+- And many others... [Work in progress]
+  
+<br>
+
+<img src="./readmeimg/firstSteps/14.png" width="40%" height="40%" align="center"/>
+
+<br>
 
 # Programs
 
@@ -289,4 +291,43 @@ purpose.
 
 ## Storage
 
-Work in progress...
+Now we are going to watch how to work with Storage in AppWrite, first of all, Storage works almost as Firebase Storage, in our example we are going to upload images and retrieve the image data and show it into a list.
+
+For this we need to go to our Storage Dashboard an click into **Create bucket** like the previous examples we need to choose an awesome naem, for this example the name will be **mybucket** very creative... Press on **Create** and our bucket is ready.
+
+![image](./readmeimg/storage/storage1.png)
+
+Storage comes by default without any configuration, so we need to configure a little our bucket, go to the settings tab and configure your bucket like this (This configuration is just to make our example app works, if you want to try something else, please read the [documentation](https://appwrite.io/docs/client/storage))
+
+The permissions needs to look like this:
+
+![image](./readmeimg/storage/storage2.png)
+
+A little bit below of this permission configuration, exist another config related with authorized file extensions, in this case we need to add the extensions related with images, in my example i addded the most common image extensions, you can add others if you want. 
+
+![image](./readmeimg/storage/storage3.png)
+
+Well, now we have our Bucket ready to go!, but like the other examples we need to make a few changes in our code. Go to AppWriteStorage.kt and change the `BUCKET_ID` variable with your Bucket ID.
+
+`app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteStorage.kt`
+
+```Kotlin 
+class AppWriteDatabase(private val context: Context, appWriteInstance: AppWriteInstance) {
+    ///...
+}
+
+// Change this ID for your own ID
+private const val BUCKET_ID = "63fccb7b6230779b11b4"
+
+```
+
+Like the past example, you could find the Bucket ID at dashboard.
+
+![image](./readmeimg/storage/storage4.png)
+
+And now we are ready to go with the AppWrite Storage!. You could upload any image from your device and list it.
+
+>The example only upload and show images, if you want to try another type of file, you will need to refactor the example code.
+
+<img src="./readmeimg/storage/storage5.png" width="40%" height="40%"/>
+<img src="./readmeimg/storage/storage6.png" width="40%" height="40%"/>

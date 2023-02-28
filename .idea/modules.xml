@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AppWrite_Example.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AppWrite_Example.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AppWrite_Example.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AppWrite_Example.app.unitTest.iml" />
-    </modules>
-  </component>
-</project>

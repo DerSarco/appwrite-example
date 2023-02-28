@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/xml_backup_rules.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/xml_data_extraction_rules.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-anydpi-v33/ic_launcher.xml"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.dersarco.appwriteexample.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.dersarco.appwriteexample.app-main-58:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    }
+]

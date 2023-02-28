@@ -13,10 +13,10 @@ Want to help me continue with this?
 Welcome to this little [AppWrite](https://appwrite.io/) Example, i'm going to try to give you a few
 code snippets focused on the most used features of any project. For example:
 
-- Login
-- User Creation
-- Database Usage
-- Storage 
+- [Accounts](#accounts)
+- [User Creation](#accounts)
+- [Database Usage](#database)
+- [Storage](#storage)
 - And many others... [Work in progress]
   
 <br>
@@ -210,12 +210,14 @@ Now with this config you are ready to start using this repo and watch how everyt
 
 # Configs per each functionality
 
-## Login/Create Accounts
+<a name="accounts"></a>
+## Accounts
 
 For login and create users we don't need any specific configuration but if you want to learn more
 about this functionality you can check
 it [here](https://appwrite.io/docs/client/account?sdk=android-kotlin)
 
+<a name="database"></a>
 ## Database
 
 For database ussage we need to config a database in our AppWrite dashboard, for this we need to go
@@ -289,6 +291,7 @@ purpose.
 
 <img src="./readmeimg/db/db8.png" width="40%" height="40%"/>
 
+<a name="storage"></a>
 ## Storage
 
 Now we are going to watch how to work with Storage in AppWrite, first of all, Storage works almost as Firebase Storage, in our example we are going to upload images and retrieve the image data and show it into a list.

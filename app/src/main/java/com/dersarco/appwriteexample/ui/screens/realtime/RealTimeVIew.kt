@@ -22,7 +22,6 @@ fun RealTimeView(
     onButtonBackPressed: () -> Unit
 ) {
     realTimeViewModel.subscribe()
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -36,9 +35,7 @@ fun RealTimeView(
                 },
                 actions = {
                     Icon(
-                        modifier = Modifier.clickable {
-                            realTimeViewModel.createNewEntry()
-                        },
+                        modifier = Modifier.clickable { realTimeViewModel.createNewEntry() },
                         imageVector = Icons.Default.Add,
                         contentDescription = "Add"
                     )

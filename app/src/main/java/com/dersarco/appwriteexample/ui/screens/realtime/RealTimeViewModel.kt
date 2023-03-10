@@ -29,42 +29,29 @@ class RealTimeViewModel(
         originalData()
     }
 
-    @Suppress("UNUSED_EXPRESSION")
     fun subscribe() {
-        _subscription =
-            appWriteRealtime.realtimeSubscription(DataEntity::class.java) { realtimeResponse ->
-                val newList = _documentsStream.value?.map {
-                    it
-                }?.toMutableList()
-                with(realtimeResponse.events.first()) {
-                    when {
-                        contains("create") -> {
-                            //TODO: Still adding duplicated, need to find a way to fix this.
-                            if (validate(realtimeResponse.payload)) {
-                                newList?.add(realtimeResponse.payload)
-                                _documentsStream.value = newList
-                            }
-                        }
-                        contains("delete") -> {
-                            newList?.remove(realtimeResponse.payload)
-                            _documentsStream.value = newList
-                        }
-                        else -> false
-                    }
-                }
+        _subscription = appWriteRealtime.realtime.subscribe(
+            "databases.63fba37bbf99b2eae6fb.collections.63fba37f873c649fbdf8.documents",
+            payloadType = DataEntity::class.java,
+        ) { realtimeResponse ->
+            val newList = _documentsStream.value!!.map {
+                it
+            }.toMutableList()
+            if (_documentsStream.value.isNullOrEmpty()) {
+                _documentsStream.value = newList
+            } else {
+                newList.add(realtimeResponse.payload)
+                _documentsStream.value = newList
             }
+
+        }
     }
 
-    //TODO: Remove this when a solution is found.
-    private fun validate(payload: DataEntity): Boolean {
-        val exist = _documentsStream.value?.find { it == payload }
-        if (exist != null) {
-            return false
-        }
-        return true
-    }
 
     private fun originalData() {
+        if (_documentsStream.value != null) {
+            return
+        }
         viewModelScope.launch(Dispatchers.IO) {
             when (val response = appWriteDatabase.listDocuments()) {
                 is AppWriteResponse.Success -> {

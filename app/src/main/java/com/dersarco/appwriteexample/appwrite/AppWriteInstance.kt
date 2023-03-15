@@ -4,6 +4,7 @@ import android.content.Context
 import io.appwrite.Client
 
 class AppWriteInstance(context: Context) {
+
     val appWriteClient = Client(context)
         .setEndpoint(ENDPOINT_URL)
         .setProject(PROJECT_ID)

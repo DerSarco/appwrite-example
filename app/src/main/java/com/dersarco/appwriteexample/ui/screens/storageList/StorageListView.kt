@@ -43,7 +43,7 @@ fun StorageListView(appWriteStorage: AppWriteStorage = get(), onButtonBackPresse
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "List Image") },
+                title = { Text(text = "Storage List") },
                 navigationIcon = {
                     Icon(
                         modifier = Modifier.clickable { onButtonBackPressed() },

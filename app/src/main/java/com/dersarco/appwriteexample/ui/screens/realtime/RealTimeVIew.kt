@@ -26,7 +26,7 @@ fun RealTimeView(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "List Image") },
+                title = { Text(text = "Realtime") },
                 navigationIcon = {
                     Icon(
                         modifier = Modifier.clickable { onButtonBackPressed() },

@@ -16,6 +16,7 @@ code snippets focused on the most used features of any project. For example:
 - [Accounts](#accounts)
 - [User Creation](#accounts)
 - [Database Usage](#database)
+- [Realtime Database](#realtime)
 - [Storage](#storage)
 - And many others... [Work in progress]
   
@@ -35,6 +36,7 @@ code snippets focused on the most used features of any project. For example:
 - AppWrite SDK (in the example below we will explain this)
 - [Jetpack Compose Navigation](https://developer.android.com/jetpack/compose/navigation)
 - [Koin](https://insert-koin.io/docs/setup/koin)
+- [Runtime Livedata](https://developer.android.com/jetpack/androidx/releases/compose-runtime)
 
 # How to use this repository
 
@@ -290,6 +292,126 @@ You also can watch your documents parsed in a Lazy Column in other view that i c
 purpose.
 
 <img src="./readmeimg/db/db8.png" width="40%" height="40%"/>
+
+<a name="realtimedb"></a>
+## Realtime
+
+For this example we are going to use the same database as showed before, we need to do a little configuration to start observing the data and react to them.
+
+first of all we need to create an instance of Realtime, like this
+
+```Kotlin 
+class AppWriteRealtime(appWriteInstance: AppWriteInstance) {
+
+    private val realtime = Realtime(appWriteInstance.appWriteClient)
+
+    //...
+}
+
+```
+> you could find the entire class in app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteRealtime.kt
+
+As we saw on the previous examples, we are injecting all this dependencies, so with that we have our instance ready to configure.
+
+for this case we are going to build something really simple, we gonna watch only for creations and deletions on our database.
+
+downside of our realtime variable, we need to create a function like this
+
+
+```Kotlin 
+    fun <T : Any> realtimeSubscription(
+        entity: Class<T>,
+        realtimeCallbackFun: (RealtimeResponseEvent<out T>) -> Unit
+    ): RealtimeSubscription {
+        return realtime.subscribe(
+            //you can handle this in a more elegant way, but the weird string with numbers and letters are Database ID and Collection ID
+            "databases.63fba37bbf99b2eae6fb.collections.63fba37f873c649fbdf8.documents",
+            payloadType = entity,
+        ) {
+            realtimeCallbackFun(it)
+        }
+    }
+```
+
+the reason why i write this function in this way is because you can subscribe to any tipe of entities so if you want to try other entity and see how this works with your own type, just pass the correct value from your viewmodel.
+
+Well, talking about viewmodels, in this case we are going to use a very short one, i'm just give the explanation on the function call of our AppWriteRealtime.kt class.
+
+Now, to uses this we need a few things, first of all we are working with Jetpack Compose, so for local storage we are going to use a MutableStateFlow to react and our function call and a subscription variable to handle the channel 
+
+```Kotlin 
+
+  //This classes are injected by koin.
+  //appWriteDatabase is used for fetch our first data, after that we only include the new data that comes from the subscription channel
+class RealTimeViewModel(
+    private val appWriteRealtime: AppWriteRealtime,
+    private val appWriteDatabase: AppWriteDatabase
+) : ViewModel() {
+
+     private var _subscription: RealtimeSubscription? = null
+
+    private val _documentsStream = MutableStateFlow<List<DataEntity>?>(null)
+    val documentsStream: StateFlow<List<DataEntity>?>
+        get() = _documentsStream
+}
+```
+
+Now, for the function call as we said we just gonna react for creation and deletion, so we need to call our function from AppWriteRealtime.kt, so you can create something like this.
+```Kotlin 
+class RealTimeViewModel(
+    private val appWriteRealtime: AppWriteRealtime,
+    private val appWriteDatabase: AppWriteDatabase
+) : ViewModel() {
+
+    //...
+@Suppress("UNUSED_EXPRESSION")
+    fun subscribe() {
+        _subscription =
+            appWriteRealtime.realtimeSubscription(DataEntity::class.java) { realtimeResponse ->
+                val newList = _documentsStream.value?.map {
+                    it
+                }?.toMutableList()
+                with(realtimeResponse.events.first()) {
+                    when {
+                        contains("create") -> {
+                            if (validate(realtimeResponse.payload)) {
+                                newList?.add(realtimeResponse.payload)
+                                _documentsStream.value = newList
+                            }
+                        }
+                        contains("delete") -> {
+                            newList?.remove(realtimeResponse.payload)
+                            _documentsStream.value = newList
+                        }
+                        else -> false
+                    }
+                }
+            }
+    }
+
+    private fun validate(payload: DataEntity): Boolean {
+        val exist = _documentsStream.value?.find { it == payload }
+        if (exist != null) {
+            return false
+        }
+        return true
+    }
+
+    //...
+}
+
+```
+
+You could say, why this is written in this way, well, realtimeResponse.events is a collection, but when something is executed like a create or delete, comes with a lot of information but in every index of that collection brings with the action executed so that is the reason why i just used first() function and look for the event and do something.
+
+for some reason the create execution added twice the response so that's the reason of validate function, i know is stupid, but for this example i think is ok, if you find another solution please add a PR 🙂.
+
+> after that i would like to explain something, inside of our viewmodel there is a function that fetch the original data from the database, this first fetch just works when you call this screen and after that we only add or remove the payloads that comes from the subscription.
+
+Now in our screen we can retrieve the data as collectAsState and do whatever you want in your screen.
+
+
+![](./readmeimg/realtime/realtime1.gif)
 
 <a name="storage"></a>
 ## Storage

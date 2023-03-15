@@ -49,6 +49,11 @@ fun WelcomeView(onGoToView: (String) -> Unit) {
             Button(onClick = { onGoToView("/$storageList") }) {
                 Text(text = "Go to $storageList")
             }
+            Divider(modifier = Modifier.fillMaxWidth(). padding(6.dp))
+            Text(text = "Realtime", modifier = Modifier.padding(top = 6.dp))
+            Button(onClick = { onGoToView("/$realtimeList") }) {
+                Text(text = "Go to $realtimeList")
+            }
         }
     }
 }

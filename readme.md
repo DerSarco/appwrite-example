@@ -110,7 +110,7 @@ Fill everything, is not mandatory to create an account with real data, you could
 (Just for developing purposes, if you want to use your container in production use something more
 clever xD)
 
-In first instace, AppWrite will ask to us the name of our project. in this case we will name it
+In first instace, AppWrite will ask to us the name of our project. In this case we will name it
 as **appwriteExample**
 
 ![image](./readmeimg/firstSteps/4.png)
@@ -124,8 +124,8 @@ need to add the **Android Platform**
 
 ![image](./readmeimg/firstSteps/6.png)
 
-What I recommend on this point? simple, create an Android project because AppWrite will ask some
-info about our project, in my example i will use the same data of this repository.
+What I recommend on this point? Simple, create an Android project because AppWrite will ask some
+info about our project, in my example I will use the same data of this repository.
 
 ![image](./readmeimg/firstSteps/7.png)
 
@@ -176,7 +176,7 @@ manifest.xml** inside of **application tag**
 ```
 
 We need to change a little this code, on **REPLACETHIS** we need to add our project ID from
-AppWrite, and where is that thing? well is very easy to find, in our AppWrite project dashboard we
+AppWrite, and where is that thing? Well is very easy to find, in our AppWrite project dashboard we
 will see this little button where we can't see directly the id but it automatically copy the id to
 our clipboard.
 
@@ -224,14 +224,14 @@ it [here](https://appwrite.io/docs/client/account?sdk=android-kotlin)
 
 For database ussage we need to config a database in our AppWrite dashboard, for this we need to go
 to our Project Dashboard and press the Database on the menu of the left, once we are there press
-on **Create Database** and choose a name, in my example i used a very creative name -> **mydb**.
+on **Create Database** and choose a name, in my example I used a very creative name -> **mydb**.
 Press create and we will have a database.
 
 ![image](./readmeimg/db/db1.png)
 
 In our Database we need to create a collection, this works like Firebase Storage, with collections
 and documents, so now we need to create a Collection, press on **Create Collection** and like before
-choose a name, for this example i used -> **mycollection**. Press create and we are ready with the
+choose a name, for this example I used -> **mycollection**. Press create and we are ready with the
 collection.
 
 ![image](./readmeimg/db/db2.png)
@@ -286,7 +286,7 @@ Now we are ready to go with this example, you can play as you want with the code
 
 <img src="./readmeimg/db/db7.png" width="40%" height="40%"/>
 
-> Be careful, and don't try to add a document with empty fields, maybe the app will crash, i'll take care of this later 😅.
+> Be careful, and don't try to add a document with empty fields, maybe the app will crash, I'll take care of this later 😅.
 
 You also can watch your documents parsed in a Lazy Column in other view that i created for this
 purpose.
@@ -309,7 +309,7 @@ class AppWriteRealtime(appWriteInstance: AppWriteInstance) {
 }
 
 ```
-> you could find the entire class in app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteRealtime.kt
+> You could find the entire class in app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteRealtime.kt
 
 As we saw on the previous examples, we are injecting all this dependencies, so with that we have our instance ready to configure.
 
@@ -333,9 +333,9 @@ downside of our realtime variable, we need to create a function like this
     }
 ```
 
-the reason why i write this function in this way is because you can subscribe to any tipe of entities so if you want to try other entity and see how this works with your own type, just pass the correct value from your viewmodel.
+the reason why I write this function in this way is because you can subscribe to any tipe of entities so if you want to try other entity and see how this works with your own type, just pass the correct value from your viewmodel.
 
-Well, talking about viewmodels, in this case we are going to use a very short one, i'm just give the explanation on the function call of our AppWriteRealtime.kt class.
+Well, talking about viewmodels, in this case we are going to use a very short one, I'm just give the explanation on the function call of our AppWriteRealtime.kt class.
 
 Now, to uses this we need a few things, first of all we are working with Jetpack Compose, so for local storage we are going to use a MutableStateFlow to react and our function call and a subscription variable to handle the channel 
 
@@ -404,9 +404,9 @@ class RealTimeViewModel(
 
 You could say, why this is written in this way, well, realtimeResponse.events is a collection, but when something is executed like a create or delete, comes with a lot of information but in every index of that collection brings with the action executed so that is the reason why i just used first() function and look for the event and do something.
 
-for some reason the create execution added twice the response so that's the reason of validate function, i know is stupid, but for this example i think is ok, if you find another solution please add a PR 🙂.
+for some reason the create execution added twice the response so that's the reason of validate function, I know is stupid, but for this example I think is ok, if you find another solution please add a PR 🙂.
 
-> after that i would like to explain something, inside of our viewmodel there is a function that fetch the original data from the database, this first fetch just works when you call this screen and after that we only add or remove the payloads that comes from the subscription.
+> after that I would like to explain something, inside of our viewmodel there is a function that fetch the original data from the database, this first fetch just works when you call this screen and after that we only add or remove the payloads that comes from the subscription.
 
 Now in our screen we can retrieve the data as collectAsState and do whatever you want in your screen.
 
@@ -428,11 +428,11 @@ The permissions needs to look like this:
 
 ![image](./readmeimg/storage/storage2.png)
 
-A little bit below of this permission configuration, exist another config related with authorized file extensions, in this case we need to add the extensions related with images, in my example i addded the most common image extensions, you can add others if you want. 
+A little bit below of this permission configuration, exist another config related with authorized file extensions, in this case we need to add the extensions related with images, in my example I addded the most common image extensions, you can add others if you want. 
 
 ![image](./readmeimg/storage/storage3.png)
 
-Well, now we have our Bucket ready to go!, but like the other examples we need to make a few changes in our code. Go to AppWriteStorage.kt and change the `BUCKET_ID` variable with your Bucket ID.
+Well, now we have our Bucket ready to go! but like the other examples we need to make a few changes in our code. Go to AppWriteStorage.kt and change the `BUCKET_ID` variable with your Bucket ID.
 
 `app/src/main/java/com/dersarco/appwriteexample/appwrite/AppWriteStorage.kt`
 
@@ -450,7 +450,7 @@ Like the past example, you could find the Bucket ID at dashboard.
 
 ![image](./readmeimg/storage/storage4.png)
 
-And now we are ready to go with the AppWrite Storage!. You could upload any image from your device and list it.
+And now we are ready to go with the AppWrite Storage! You could upload any image from your device and list it.
 
 >The example only upload and show images, if you want to try another type of file, you will need to refactor the example code.
 

@@ -1,3 +1,6 @@
+# THIS IS TOTALLY OUTDATED... SOME DAY I'LL UPDATE THIS BUT WITH THE CURRENTLY USSAGE OF THE AI PROBABLY THIS NEVER BE UPDATED
+
+
 Want to help me continue with this?
 
  <a href="https://www.buymeacoffee.com/dersarcow" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
